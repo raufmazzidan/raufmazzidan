@@ -13,7 +13,7 @@ export const PORTOFOLIO_DATA = [
       "Unit Testing",
     ],
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "Telkom Indonesia's Internal Application for Managing All Wholesale Journeys is a robust and integrated platform designed to streamline the entire wholesale process from start to finish",
     logo: {
       src: "/assets/logo-mycarrier.svg",
       alt: "Logo MyCarrier Internal",
@@ -36,14 +36,14 @@ export const PORTOFOLIO_DATA = [
       "Server Side Rendering",
     ],
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "MyCarrier is a service provided by Telkom Indonesia for wholesale customers, offering a new experience for users to explore solutions and monitor their services.",
     logo: {
       src: "/assets/logo-mycarrier.svg",
-      alt: "Logo MyCarrier Internal",
+      alt: "Logo MyCarrier Customer",
     },
     preview: {
-      src: "/assets/porto-mycarrier-internal.webp",
-      alt: "Portofolio MyCarrier Internal",
+      src: "/assets/porto-mycarrier-customer.webp",
+      alt: "Portofolio MyCarrier Customer",
     },
   },
   {
@@ -58,37 +58,14 @@ export const PORTOFOLIO_DATA = [
       "Wordpress API",
     ],
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "The landing page features a promotional banner showcasing PPOB GriyaBayar's services, highlighting their convenience for bill payments and transactions.",
     logo: {
       src: "/assets/logo-griya-bayar.png",
       alt: "Logo Griya Bayar",
     },
     preview: {
-      src: "/assets/porto-mycarrier-internal.webp",
-      alt: "Portofolio MyCarrier Internal",
-    },
-  },
-  {
-    url: "https://mycarrier.telkom.co.id",
-    title: "MyCarrier Customer",
-    stack: [
-      "TypeScript",
-      "Next Js",
-      "Tailwind CSS",
-      "React Query",
-      "Axios",
-      "Unit Testing",
-      "Server Side Rendering",
-    ],
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    logo: {
-      src: "/assets/logo-mycarrier.svg",
-      alt: "Logo MyCarrier Internal",
-    },
-    preview: {
-      src: "/assets/porto-mycarrier-internal.webp",
-      alt: "Portofolio MyCarrier Internal",
+      src: "/assets/porto-griya-bayar.webp",
+      alt: "Portofolio Griya Bayar",
     },
   },
   {
@@ -96,14 +73,37 @@ export const PORTOFOLIO_DATA = [
     title: "Hiraeth Parfume",
     stack: ["TypeScript", "Next Js", "Tailwind CSS", "GSAP Animation"],
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "The landing page features a promotional website showcasing Hiraeth Perfume, highlighting the variant products.",
     logo: {
       src: "/assets/logo-hiraeth.svg",
       alt: "Logo Hiraeth",
     },
     preview: {
-      src: "/assets/porto-mycarrier-internal.webp",
-      alt: "Portofolio MyCarrier Internal",
+      src: "/assets/porto-hiraeth.webp",
+      alt: "Portofolio Hiraeth",
+    },
+  },
+  {
+    url: "https://ppob-griyabayar.com",
+    title: "Belajar Menulis",
+    stack: [
+      "TypeScript",
+      "Next Js",
+      "Tailwind CSS",
+      "Mantine UI",
+      "Firebase Auth",
+      "Firebase Storage",
+      "Thesis",
+    ],
+    description:
+      "Belajar Menulis is a website CMS designed for mentors to input questions and review the results completed by mentees.",
+    logo: {
+      src: "/assets/logo-belajar-menulis.png",
+      alt: "Logo Belajar Menulis",
+    },
+    preview: {
+      src: "/assets/porto-belajar-menulis.webp",
+      alt: "Belajar Menulis",
     },
   },
 ];

@@ -15,8 +15,8 @@ const Banner = () => {
           <p className="text-base lg:text-lg font-light">Jakarta, Indonesia</p>
         </div>
         <p className="lg:text-lg font-light">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry standard dummy text ever.
+          5+ years experience in front-end programming, speciality on
+          javascript, typescript, react, nextjs, tailwindcss, and etc.
         </p>
       </div>
     </section>

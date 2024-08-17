@@ -25,17 +25,14 @@ const Portofolio = () => {
                     <Tags key={stack}>{stack}</Tags>
                   ))}
                 </div>
-                <p className="mt-4 text-sm font-light">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
-                </p>
+                <p className="mt-4 text-sm font-light">{porto.description}</p>
               </div>
               <div className="relative w-full col-span-2 lg:col-span-1">
                 <Image
-                  src="/assets/porto-mycarrier-internal.webp"
+                  src={porto.preview.src}
                   width={960}
                   height={800}
-                  alt="myc-intenral"
+                  alt={porto.preview.alt}
                   className="lg:h-auto lg:w-auto w-full lg:absolute right-0 bottom-0"
                 />
               </div>
