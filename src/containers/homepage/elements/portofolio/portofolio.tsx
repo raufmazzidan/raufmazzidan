@@ -16,7 +16,7 @@ const Portofolio = () => {
                   alt={porto.logo.alt}
                   height={24}
                   width={105}
-                  className="!h-6 w-auto max-w-[105px]"
+                  className="!h-6 w-auto max-w-[150px]"
                 />
 
                 <h2 className="text-3xl font-medium mt-5">{porto.title}</h2>
