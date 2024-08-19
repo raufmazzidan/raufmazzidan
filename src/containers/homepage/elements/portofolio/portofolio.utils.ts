@@ -69,7 +69,7 @@ export const PORTOFOLIO_DATA = [
     },
   },
   {
-    url: "https://ppob-griyabayar.com",
+    url: "https://hiraeth-parfume.vercel.app",
     title: "Hiraeth Parfume",
     stack: ["TypeScript", "Next Js", "Tailwind CSS", "GSAP Animation"],
     description:
@@ -84,7 +84,7 @@ export const PORTOFOLIO_DATA = [
     },
   },
   {
-    url: "https://ppob-griyabayar.com",
+    url: "https://belajarmenulis.netlify.app",
     title: "Belajar Menulis",
     stack: [
       "TypeScript",
