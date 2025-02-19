@@ -9,7 +9,7 @@ const Portofolio = () => {
       <div className="max-w-4xl m-auto flex flex-col items-center justify-center gap-20 px-8">
         {PORTOFOLIO_DATA.map((porto, i) => (
           <Link href={porto.url} key={i} target="_blank">
-            <div className="bg-[#eceff1] hover:bg-[#f6f6f6] hover:scale-[1.02] hover:shadow-portofolio transition ease-out duration-200 rounded-3xl w-full min-h-96 grid grid-cols-2 overflow-hidden">
+            <div className="bg-[#eceff1] dark:bg-[#393E46] hover:bg-[#f6f6f6] dark:text-slate-300 hover:scale-[1.02] hover:shadow-portofolio transition ease-out duration-200 rounded-3xl w-full min-h-96 grid grid-cols-2 overflow-hidden">
               <div className="lg:p-16 p-8 lg:!pr-0 lg:col-span-1 col-span-2">
                 <Image
                   src={porto.logo.src}

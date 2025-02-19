@@ -6,7 +6,7 @@ const Tags: FC<React.HTMLProps<HTMLDivElement>> = (props) => {
     <div
       {...props}
       className={classFusion(
-        "text-[10px] font-light bg-slate-300 px-1 py-[1px] rounded inline-block",
+        "text-[10px] font-light bg-slate-300 dark:bg-slate-800 px-1 py-[1px] rounded inline-block",
         props.className
       )}
     />
