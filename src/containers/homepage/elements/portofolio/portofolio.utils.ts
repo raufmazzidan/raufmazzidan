@@ -11,6 +11,8 @@ export const PORTOFOLIO_DATA = [
       "Axios",
       "Storybook",
       "Unit Testing",
+      "Web Hook",
+      "Web Socket",
     ],
     description:
       "Telkom Indonesia's Internal Application for Managing All Wholesale Journeys is a robust and integrated platform designed to streamline the entire wholesale process from start to finish",
@@ -34,6 +36,7 @@ export const PORTOFOLIO_DATA = [
       "Axios",
       "Unit Testing",
       "Server Side Rendering",
+      "Framer Motion",
     ],
     description:
       "MyCarrier is a service provided by Telkom Indonesia for wholesale customers, offering a new experience for users to explore solutions and monitor their services.",

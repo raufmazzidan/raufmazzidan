@@ -1,8 +1,10 @@
+import Navigation from "@/components/section/navigation";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
 
-const fontType = Kanit({
+const font = Kanit({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
@@ -19,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fontType.className}>{children}</body>
+      <body className={cn(font.className)}>
+        <Navigation />
+        <main className="max-w-3xl px-6 m-auto">{children}</main>
+      </body>
     </html>
   );
 }
