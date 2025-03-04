@@ -1,21 +1,49 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { FC, useState } from "react";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 const OPTIONS = ["Home", "Works"];
 
 const Tabs = () => {
   const [value, onChange] = useState("Home");
 
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentTab = "Home";
+
+      for (const tab of OPTIONS) {
+        const section = document.getElementById(tab.toLowerCase());
+        if (section) {
+          const { top } = section.getBoundingClientRect();
+          if (top <= 240) {
+            currentTab = tab;
+          }
+        }
+      }
+      onChange(currentTab);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="w-full relative">
-      <div className="flex space-x-2">
+      <div className="flex gap-2">
         {OPTIONS.map((tab) => (
           <button
             key={tab}
-            onClick={() => onChange(tab)}
+            onClick={() => {
+              const section = document.getElementById(tab.toLowerCase());
+              if (section) {
+                const yOffset =
+                  section.getBoundingClientRect().top + window.scrollY - 120;
+                window.scrollTo({ top: yOffset, behavior: "smooth" });
+              }
+              onChange(tab);
+            }}
             className="relative px-4 py-1.5"
           >
             <span

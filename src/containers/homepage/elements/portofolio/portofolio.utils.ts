@@ -1,6 +1,11 @@
-export const PORTOFOLIO_DATA = [
+import { IPortofolio } from "./portofolio.types";
+
+export const PORTOFOLIO_DATA: IPortofolio[] = [
   {
-    url: "https://internal-mycarrier.telkom.co.id",
+    redirect: {
+      url: "https://internal-mycarrier.telkom.co.id",
+      label: "internal-mycarrier.telkom.co.id",
+    },
     title: "MyCarrier Internal",
     stack: [
       "TypeScript",
@@ -26,7 +31,35 @@ export const PORTOFOLIO_DATA = [
     },
   },
   {
-    url: "https://mycarrier.telkom.co.id",
+    redirect: {
+      url: "https://maas-internal-dev.mycarrier.co.id/dashboard/storybook/index.html",
+      label: "internal-mycarrier.telkom.co.id/design-system",
+    },
+    title: "MyCarrier Design Sytem",
+    stack: [
+      "TypeScript",
+      "Next Js",
+      "Tailwind CSS",
+      "Storybook",
+      "Unit Testing",
+      "Atomic Design",
+    ],
+    description:
+      "Telkom Indonesia's Internal Application for Managing All Wholesale Journeys is a robust and integrated platform designed to streamline the entire wholesale process from start to finish",
+    logo: {
+      src: "/assets/logo-mycarrier.svg",
+      alt: "Logo MyCarrier Internal",
+    },
+    preview: {
+      src: "/assets/porto-mycarrier-internal.webp",
+      alt: "Portofolio MyCarrier Internal",
+    },
+  },
+  {
+    redirect: {
+      url: "https://mycarrier.telkom.co.id",
+      label: "mycarrier.telkom.co.id",
+    },
     title: "MyCarrier Customer",
     stack: [
       "TypeScript",
@@ -50,7 +83,38 @@ export const PORTOFOLIO_DATA = [
     },
   },
   {
-    url: "https://ppob-griyabayar.com",
+    redirect: {
+      url: "https://mycarrier.telkom.co.id",
+      label: "mycarrier.telkom.co.id",
+      disabled: true,
+    },
+    title: "MyTDS Partner",
+    stack: [
+      "JavaScript",
+      "React Js",
+      "Create React App",
+      "Redux",
+      "Material UI",
+      "Axios",
+      "Unit Testing",
+      "Firebase Notification",
+    ],
+    description:
+      "MyCarrier is a service provided by Telkom Indonesia for wholesale customers, offering a new experience for users to explore solutions and monitor their services.",
+    logo: {
+      src: "/assets/logo-tds-partner.svg",
+      alt: "Logo MyCarrier Customer",
+    },
+    preview: {
+      src: "/assets/porto-mycarrier-customer.webp",
+      alt: "Portofolio MyCarrier Customer",
+    },
+  },
+  {
+    redirect: {
+      url: "https://ppob-griyabayar.com",
+      label: "ppob-griyabayar.com",
+    },
     title: "PPOB Griya Bayar",
     stack: [
       "TypeScript",
@@ -72,7 +136,10 @@ export const PORTOFOLIO_DATA = [
     },
   },
   {
-    url: "https://hiraeth-parfume.vercel.app",
+    redirect: {
+      url: "https://hiraeth-parfume.vercel.app",
+      label: "hiraeth-parfume.vercel.app",
+    },
     title: "Hiraeth Parfume",
     stack: ["TypeScript", "Next Js", "Tailwind CSS", "GSAP Animation"],
     description:
@@ -87,7 +154,10 @@ export const PORTOFOLIO_DATA = [
     },
   },
   {
-    url: "https://belajarmenulis.netlify.app",
+    redirect: {
+      url: "https://belajarmenulis.netlify.app",
+      label: "belajarmenulis.netlify.app",
+    },
     title: "Belajar Menulis",
     stack: [
       "TypeScript",

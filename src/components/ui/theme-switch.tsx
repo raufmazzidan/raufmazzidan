@@ -3,7 +3,7 @@
 import { useTheme } from "@/helper/hooks/useTheme";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "./button";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 const ThemeSwitch = () => {
   const { theme, toggleTheme } = useTheme();
