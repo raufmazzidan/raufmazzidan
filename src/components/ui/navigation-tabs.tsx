@@ -42,7 +42,6 @@ const Tabs = () => {
                   section.getBoundingClientRect().top + window.scrollY - 120;
                 window.scrollTo({ top: yOffset, behavior: "smooth" });
               }
-              onChange(tab);
             }}
             className="relative px-4 py-1.5"
           >
