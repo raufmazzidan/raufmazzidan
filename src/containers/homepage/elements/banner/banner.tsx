@@ -57,7 +57,7 @@ const Banner = () => {
                 </Link>
               </TooltipTrigger>
               <TooltipContent>
-                <p className="font-light">{label}</p>
+                <p className="font-light text-xs">{label}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
