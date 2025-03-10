@@ -9,7 +9,7 @@ const font = Kanit({
   subsets: ["latin"],
 });
 
-export const metadat: Metadata = {
+export const metadata: Metadata = {
   title: "Rauf Mazzidan | Front End Developer",
   description:
     "Experienced Frontend Developer specializing in JavaScript, TypeScript, React, and Next.js. Passionate about delivering high-quality, user-centric digital experiences while ensuring performance optimization and code precision.",
