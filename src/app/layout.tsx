@@ -9,9 +9,26 @@ const font = Kanit({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadat: Metadata = {
   title: "Rauf Mazzidan | Front End Developer",
-  description: "Hello, I'm Rauf",
+  description:
+    "Experienced Frontend Developer specializing in JavaScript, TypeScript, React, and Next.js. Passionate about delivering high-quality, user-centric digital experiences while ensuring performance optimization and code precision.",
+  openGraph: {
+    title: "Rauf Mazzidan | Front End Developer",
+    description:
+      "Experienced Frontend Developer specializing in JavaScript, TypeScript, React, and Next.js. Passionate about delivering high-quality, user-centric digital experiences while ensuring performance optimization and code precision.",
+    url: "https://raufmazzidan.com/",
+    siteName: "Rauf Mazzidan | Front End Developer",
+    images: [
+      {
+        url: "https://raufmazzidan.com/assets/thumbnail.png",
+        width: 1536,
+        height: 848,
+        alt: "Thumbnail of raufmazzidan.com",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
