@@ -1,7 +1,7 @@
 "use client";
 
 import { IPortofolio } from "@/containers/homepage/elements/portofolio/portofolio.types";
-import { Maximize, Maximize2, SquareArrowOutUpRight } from "lucide-react";
+import { Maximize, SquareArrowOutUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import { Badge } from "./badge";
 
 interface IPortofolioCard {
   data: IPortofolio;
-  onClick: (e: any) => void;
+  onClick: (data: IPortofolio) => (e: any) => void;
 }
 
 const PortofolioCard: FC<IPortofolioCard> = (props) => {
@@ -20,7 +20,7 @@ const PortofolioCard: FC<IPortofolioCard> = (props) => {
 
   return (
     <motion.div
-      onClick={onClick}
+      onClick={onClick(data)}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className="transition select-none rounded border-accent-foreground hover:border-foreground/20 border w-full relative cursor-pointer overflow-hidden min-h-[171px]"
@@ -82,22 +82,24 @@ const PortofolioCard: FC<IPortofolioCard> = (props) => {
           className="w-auto max-h-6 max-w-[100px]"
         />
         <h2 className="text-2xl mt-3">{data.title}</h2>
-        <div>
-          <Link
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-            href={data.redirect.url}
-            target="_blank"
-            className="group inline-flex text-zinc-400 dark:text-zinc-600 decoration-foreground font-extralight text-sm cursor-pointer hover:underline items-center gap-1"
-          >
-            {data.redirect.label}
-            <SquareArrowOutUpRight
-              size={14}
-              strokeWidth={1.5}
-              className="hidden group-hover:block text-foreground"
-            />
-          </Link>
+        <div className="min-h-5">
+          {data.redirect && (
+            <Link
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              href={data.redirect.url}
+              target="_blank"
+              className="group inline-flex text-zinc-400 dark:text-zinc-600 decoration-foreground font-extralight text-sm cursor-pointer hover:underline items-center gap-1"
+            >
+              {data.redirect.label}
+              <SquareArrowOutUpRight
+                size={14}
+                strokeWidth={1.5}
+                className="hidden group-hover:block text-foreground"
+              />
+            </Link>
+          )}
         </div>
         <div className="flex items-center gap-1 mt-3 flex-wrap">
           {data.stack.map((stack) => (

@@ -1,8 +1,8 @@
 export interface IPortofolio {
-  redirect: {
+  id: string;
+  redirect?: {
     url: string;
     label: string;
-    disabled?: boolean;
   };
   title: string;
   stack: string[];
@@ -15,4 +15,20 @@ export interface IPortofolio {
     src: string;
     alt: string;
   };
+  longDescription: string;
+  features: string[];
+  overviewImage: {
+    front: {
+      src: string;
+      alt: string;
+    };
+    back: {
+      src: string;
+      alt: string;
+    };
+  };
+  projectShowcase: {
+    src: string;
+    alt: string;
+  }[];
 }
