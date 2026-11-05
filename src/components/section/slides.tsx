@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { ArrowLeft, ArrowRight, Maximize, Minimize } from "lucide-react";
-import { FC, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 
 const variants = {
   enter: () => ({
@@ -20,7 +20,7 @@ const variants = {
 interface ISldes {
   slides: {
     id: string;
-    content: JSX.Element;
+    content: ReactNode;
   }[];
   onClose: () => void;
 }
@@ -94,8 +94,8 @@ const Slides: FC<ISldes> = ({ slides, onClose }) => {
             >
               {activeSlide === index && (
                 <motion.div
-                  layoutId="bg"
-                  className="absolute bottom-0 left-0 right-0 w-full h-full bg-accent z-50"
+                  layoutId="slide-indicator-bg"
+                  className="absolute inset-0 bg-accent z-50"
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 />
               )}
@@ -118,7 +118,7 @@ const Slides: FC<ISldes> = ({ slides, onClose }) => {
             "fixed bottom-4 right-4 bg-foreground rounded shadow-lg text-accent z-50 flex flex-col items-center justify-center max-w-[calc(100vw-32px)]",
             {
               "p-4 justify-start items-start": showHelper,
-            }
+            },
           )}
         >
           {showHelper ? (

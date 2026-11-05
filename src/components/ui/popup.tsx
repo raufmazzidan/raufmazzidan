@@ -1,7 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { FC, useEffect } from "react";
+import { FC, ReactNode, useEffect } from "react";
+import { Kbd } from "./kbd";
 
 export interface IPopupProps {
   isOpen: boolean;
@@ -10,14 +11,14 @@ export interface IPopupProps {
     y: number;
   };
   onClose: () => void;
-  content?: JSX.Element;
+  content?: ReactNode;
 }
 
 const Popup: FC<IPopupProps> = (props) => {
   const { isOpen, position = { x: 0, y: 0 }, onClose, content } = props;
   useEffect(() => {
-    const handleKeyDown = (e: any) => {
-      if (e.key === "Escape") {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !e.defaultPrevented) {
         onClose();
       }
     };
@@ -40,7 +41,7 @@ const Popup: FC<IPopupProps> = (props) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed top-0 left-0 w-full h-full bg-accent-foreground flex z-50"
+          className="fixed inset-0 w-full h-full bg-accent-foreground flex z-[60]"
           initial={{
             clipPath: `circle(0px at ${position.x}px ${position.y}px)`,
           }}
@@ -57,7 +58,9 @@ const Popup: FC<IPopupProps> = (props) => {
             <>{content}</>
           ) : (
             <div className="w-full h-full flex items-center flex-col gap-1 justify-center font-light text-sm">
-              <p>click anywhere to close / press esc</p>
+              <p className="inline-flex items-center gap-1.5">
+                click anywhere to close / press <Kbd>Esc</Kbd>
+              </p>
               <p className="text-xs text-accent">still in work 🚧</p>
             </div>
           )}

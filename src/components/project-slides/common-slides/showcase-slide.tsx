@@ -1,17 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "motion/react";
-import { FC, useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import {
-  ArrowDownCircle,
-  ArrowRight,
-  ArrowRightCircle,
-  ArrowUpCircle,
-} from "lucide-react";
-import { delay } from "motion";
+import useEmblaCarousel from "embla-carousel-react";
+import { ArrowDownCircle, ArrowUpCircle } from "lucide-react";
+import { motion } from "motion/react";
+import Image from "next/image";
+import { FC, useCallback } from "react";
 
 export interface ShowcaseSlideProps {
   images: {
@@ -33,7 +27,7 @@ const ShowcaseSlide: FC<ShowcaseSlideProps> = (props) => {
         playOnInit: true,
         stopOnInteraction: false,
       }),
-    ]
+    ],
   );
 
   const onButtonAutoplayClick = useCallback(
@@ -49,7 +43,7 @@ const ShowcaseSlide: FC<ShowcaseSlideProps> = (props) => {
       resetOrStop();
       callback();
     },
-    [emblaApi]
+    [emblaApi],
   );
 
   const onPrevButtonClick = useCallback(() => {
@@ -148,11 +142,11 @@ const ShowcaseSlide: FC<ShowcaseSlideProps> = (props) => {
             }}
           >
             <div className="overflow-y-hidden" ref={emblaRef}>
-              <div className="flex flex-col touch-pan-x touch-pinch-zoom mt-[-1rem] h-[656px]">
+              <div className="flex flex-col touch-pan-x touch-pinch-zoom -mt-4 h-164">
                 {images.map((i, index) => (
                   <div
                     key={index}
-                    className="w-fit transform-gpu h-[640px] flex-[0_0_100%] min-h-0 pt-4"
+                    className="w-fit transform-gpu h-160 flex-[0_0_100%] min-h-0 pt-4"
                   >
                     <Image
                       {...i}

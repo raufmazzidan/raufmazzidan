@@ -43,7 +43,7 @@ const Tabs = () => {
                 window.scrollTo({ top: yOffset, behavior: "smooth" });
               }
             }}
-            className="relative px-4 py-1.5"
+            className="relative px-4 py-1.5 cursor-pointer"
           >
             <span
               className={cn("relative z-10 text-sm transition", {
@@ -54,8 +54,8 @@ const Tabs = () => {
             </span>
             {value === tab && (
               <motion.div
-                layoutId="bg"
-                className="absolute bottom-0 left-0 right-0 w-full h-full rounded bg-accent-foreground z-0"
+                layoutId="nav-tab-bg"
+                className="absolute inset-0 rounded bg-accent-foreground z-0"
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               />
             )}

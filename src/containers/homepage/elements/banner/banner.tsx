@@ -1,23 +1,31 @@
 import Checkered from "@/components/ui/checkered";
 import Greetings from "@/components/ui/greetings";
-import { FileText, Github, Linkedin, Mail } from "lucide-react";
-import { getGreeting } from "./banner.utils";
-import Link from "next/link";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { FileText, GitBranch, Mail, UsersCollaboration } from "lucide-react";
+import Link from "next/link";
+import { getGreeting } from "./banner.utils";
 
 const SOCIAL = [
   {
-    Icon: Linkedin,
+    Icon: UsersCollaboration,
     label: "LinkedIn",
     url: "https://www.linkedin.com/in/raufmazzidan/",
   },
-  { Icon: Mail, label: "Email", url: "mailto:raufmazzidan@gmail.com" },
-  { Icon: Github, label: "Github", url: "https://github.com/raufmazzidan" },
+  {
+    Icon: Mail,
+    label: "Email",
+    url: "mailto:raufmazzidan@gmail.com",
+  },
+  {
+    Icon: GitBranch,
+    label: "Github",
+    url: "https://github.com/raufmazzidan",
+  },
   {
     Icon: FileText,
     label: "Resume",
@@ -46,8 +54,8 @@ const Banner = () => {
       <div className="mt-4 inline-flex gap-2">
         {SOCIAL.map(({ Icon, url, label }) => (
           <TooltipProvider key={url}>
-            <Tooltip delayDuration={0.5}>
-              <TooltipTrigger asChild>
+            <Tooltip>
+              <TooltipTrigger>
                 <Link
                   target="_blank"
                   href={url}

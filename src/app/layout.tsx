@@ -1,8 +1,11 @@
 import Navigation from "@/components/section/navigation";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { Kanit, Geist } from "next/font/google";
 import "./globals.css";
+import { TooltipProvider } from "@/components/ui/tooltip";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const font = Kanit({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -37,10 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={cn(font.className)}>
-        <Navigation />
-        <main className="max-w-3xl px-6 m-auto">{children}</main>
+        <TooltipProvider>
+          <Navigation />
+          <main className="max-w-3xl px-6 m-auto">{children}</main>
+        </TooltipProvider>
       </body>
     </html>
   );
