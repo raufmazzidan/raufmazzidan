@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -34,6 +35,6 @@
     "eslint-config-next": "16.4.5",
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.4",
-    "typescript": "^7"
+    "typescript": "^5.9.3"
   }
 }
