@@ -120,6 +120,6 @@
   }
 
   *::selection {
-    @apply bg-red-500 text-white;
+    @apply bg-accent text-white;
   }
 }

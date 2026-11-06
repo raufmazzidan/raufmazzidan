@@ -11,13 +11,13 @@ export interface IPortofolio {
     src: string;
     alt: string;
   };
-  preview: {
+  preview?: {
     src: string;
     alt: string;
   };
   longDescription: string;
   features: string[];
-  overviewImage: {
+  overviewImage?: {
     front: {
       src: string;
       alt: string;

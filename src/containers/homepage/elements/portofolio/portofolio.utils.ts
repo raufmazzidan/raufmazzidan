@@ -2,6 +2,51 @@ import { IPortofolio } from "./portofolio.types";
 
 export const PORTOFOLIO_DATA: IPortofolio[] = [
   {
+    id: "amanode",
+    redirect: {
+      url: "https://amanode.id",
+      label: "amanode.id",
+    },
+    title: "Amanode",
+    stack: [
+      "TypeScript",
+      "Next Js",
+      "Tailwind CSS",
+      "React Query",
+      "Shadcn UI",
+      "Motion",
+    ],
+    description:
+      "Amanode is an Indonesian digital asset fintech platform providing Rupiah liquidity for crypto holders without selling their holdings.",
+    logo: {
+      src: "/assets/logo-amanode.svg",
+      alt: "Logo Amanode",
+    },
+    longDescription:
+      "Amanode is an Indonesian fintech and digital asset platform developed by PT Alpha Cipta Inovasi (ACI), officially admitted to OJK's Regulatory Sandbox. The platform enables crypto asset holders to access Rupiah liquidity and working capital without liquidating their crypto holdings—helping users meet immediate financial needs while preserving long-term positions within a transparent, regulated ecosystem.",
+    features: [
+      "Crypto-backed liquidity simulation and application flow",
+      "Real-time collateral valuation and LTV health monitoring",
+      "Seamless Rupiah & IDRX stablecoin disbursement workflow",
+      "KYC verification and secure user portfolio management",
+      "Interactive marketing landing page and product overview",
+    ],
+    projectShowcase: [
+      {
+        src: "/assets/overviews/amanode/1.jpeg",
+        alt: "Overview of Amanode",
+      },
+      {
+        src: "/assets/overviews/amanode/2.jpeg",
+        alt: "Overview of Amanode",
+      },
+      {
+        src: "/assets/overviews/amanode/3.jpeg",
+        alt: "Overview of Amanode",
+      },
+    ],
+  },
+  {
     id: "mycarrier-internal",
     redirect: {
       url: "https://internal-mycarrier.telkom.co.id",
@@ -56,7 +101,6 @@ export const PORTOFOLIO_DATA: IPortofolio[] = [
         src: "/assets/overviews/mycarrier-internal/1.png",
         alt: "Overview of MyCarrier Internal",
       },
-
       {
         src: "/assets/overviews/mycarrier-internal/2.png",
         alt: "Overview of MyCarrier Internal",

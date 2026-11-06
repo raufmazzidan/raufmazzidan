@@ -41,14 +41,14 @@ const PortofolioCard: FC<IPortofolioCard> = (props) => {
             stiffness: 800,
           },
         }}
-        className="absolute w-full min-h-[171px] h-full flex items-start justify-end"
+        className="absolute w-full min-h-42.75 h-full flex items-start justify-end"
       >
         <Image
           src={data.logo.src}
           alt={data.logo.alt}
           height={200}
           width={300}
-          className="w-full mt-4 rotate-[15deg]"
+          className="w-full mt-4 rotate-15"
         />
       </motion.div>
       <motion.div
@@ -79,7 +79,7 @@ const PortofolioCard: FC<IPortofolioCard> = (props) => {
           alt={data.logo.alt}
           height={24}
           width={105}
-          className="w-auto max-h-6 max-w-[100px]"
+          className="w-auto max-h-6 max-w-28"
         />
         <h2 className="text-2xl mt-3">{data.title}</h2>
         <div className="min-h-5">

@@ -247,7 +247,7 @@ const ProjectShowcaseModal: FC<ProjectShowcaseModalProps> = ({
         return;
       }
 
-      if (e.code === "Space") {
+      if (totalScreens > 0 && e.code === "Space") {
         if (
           e.target instanceof HTMLElement &&
           e.target.closest("button, a, input, textarea")
@@ -308,42 +308,44 @@ const ProjectShowcaseModal: FC<ProjectShowcaseModalProps> = ({
         </motion.div>
 
         {/* LEFT SECTION: Single-Column Walking Showcase */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.45, delay: 0.12 }}
-          onMouseEnter={() => setIsGalleryHovered(true)}
-          onMouseLeave={() => setIsGalleryHovered(false)}
-          className="relative w-full lg:w-[50%] h-80 sm:h-105 lg:h-screen shrink-0 px-4 sm:px-8 lg:px-10 overflow-hidden"
-        >
-          <div className="relative z-10 h-full w-full max-w-2xl mx-auto mask-[linear-gradient(to_bottom,transparent_0%,black_8%,black_92%,transparent_100%)]">
-            <WalkingColumn
-              items={columnItems}
-              direction="up"
-              speed={38}
-              isSlowed={isGalleryHovered}
-              isPaused={selectedIndex !== null || isManualPaused}
-              onSelectImage={setSelectedIndex}
-            />
-          </div>
+        {totalScreens > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.45, delay: 0.12 }}
+            onMouseEnter={() => setIsGalleryHovered(true)}
+            onMouseLeave={() => setIsGalleryHovered(false)}
+            className="relative w-full lg:w-[50%] h-80 sm:h-105 lg:h-screen shrink-0 px-4 sm:px-8 lg:px-10 overflow-hidden"
+          >
+            <div className="relative z-10 h-full w-full max-w-2xl mx-auto mask-[linear-gradient(to_bottom,transparent_0%,black_8%,black_92%,transparent_100%)]">
+              <WalkingColumn
+                items={columnItems}
+                direction="up"
+                speed={38}
+                isSlowed={isGalleryHovered}
+                isPaused={selectedIndex !== null || isManualPaused}
+                onSelectImage={setSelectedIndex}
+              />
+            </div>
 
-          {/* Minimal status caption */}
-          <div className="hidden sm:inline-flex items-center gap-2 pointer-events-none absolute bottom-4 left-4 z-20 rounded bg-background/90 border border-foreground/10 px-2.5 py-1 text-xs font-extralight text-zinc-500 dark:text-zinc-400">
-            <span
-              className={cn(
-                "h-1.5 w-1.5 rounded-[1px] transition-colors",
-                isManualPaused ? "bg-zinc-400" : "bg-accent",
-              )}
-            />
-            <span>
-              {isManualPaused
-                ? "paused"
-                : isGalleryHovered
-                  ? "click any image to expand"
-                  : `${totalScreens} screens · hover to slow`}
-            </span>
-          </div>
-        </motion.div>
+            {/* Minimal status caption */}
+            <div className="hidden sm:inline-flex items-center gap-2 pointer-events-none absolute bottom-4 left-4 z-20 rounded bg-background/90 border border-foreground/10 px-2.5 py-1 text-xs font-extralight text-zinc-500 dark:text-zinc-400">
+              <span
+                className={cn(
+                  "h-1.5 w-1.5 rounded-[1px] transition-colors",
+                  isManualPaused ? "bg-zinc-400" : "bg-accent",
+                )}
+              />
+              <span>
+                {isManualPaused
+                  ? "paused"
+                  : isGalleryHovered
+                    ? "click any image to expand"
+                    : `${totalScreens} screens · hover to slow`}
+              </span>
+            </div>
+          </motion.div>
+        )}
 
         {/* RIGHT SECTION: Project Explanation */}
         <div className="relative w-full lg:h-screen lg:overflow-y-auto overflow-x-hidden">
@@ -477,30 +479,31 @@ const ProjectShowcaseModal: FC<ProjectShowcaseModalProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35 }}
           onClick={(e) => e.stopPropagation()}
-          className="hidden sm:inline-flex fixed bottom-4 right-5 z-[55] items-center gap-3 rounded bg-background/90 backdrop-blur-md border border-foreground/10 px-3 py-1.5 text-xs font-extralight text-zinc-500 dark:text-zinc-400 select-none shadow-xs"
+          className="hidden sm:inline-flex fixed bottom-4 right-5 z-55 items-center gap-3 rounded bg-background/90 backdrop-blur-md border border-foreground/10 px-3 py-1.5 text-xs font-extralight text-zinc-500 dark:text-zinc-400 select-none shadow-xs"
         >
           {selectedIndex === null ? (
             <>
-              <div
-                onClick={() => setIsManualPaused((prev) => !prev)}
-                className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors cursor-pointer"
-              >
-                <Kbd
-                  className={keycapClass(
-                    activeKey === "Space" || isManualPaused,
-                  )}
-                >
-                  Space
-                </Kbd>
-                <span>{isManualPaused ? "resume" : "pause"}</span>
-              </div>
-
               {totalScreens > 0 && (
                 <>
+                  <div
+                    onClick={() => setIsManualPaused((prev) => !prev)}
+                    className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors cursor-pointer"
+                  >
+                    <Kbd
+                      className={keycapClass(
+                        activeKey === "Space" || isManualPaused,
+                      )}
+                    >
+                      Space
+                    </Kbd>
+                    <span>{isManualPaused ? "resume" : "pause"}</span>
+                  </div>
+
                   <Separator
                     orientation="vertical"
                     className="h-3 self-center m-auto bg-foreground/10"
                   />
+
                   <div
                     onClick={() => setSelectedIndex(0)}
                     className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors cursor-pointer"
@@ -515,13 +518,13 @@ const ProjectShowcaseModal: FC<ProjectShowcaseModalProps> = ({
                     </KbdGroup>
                     <span>screens</span>
                   </div>
+
+                  <Separator
+                    orientation="vertical"
+                    className="h-3 self-center m-auto bg-foreground/10"
+                  />
                 </>
               )}
-
-              <Separator
-                orientation="vertical"
-                className="h-3 self-center m-auto bg-foreground/10"
-              />
               <div
                 onClick={onClose}
                 className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors cursor-pointer"
