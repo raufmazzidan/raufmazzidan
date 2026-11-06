@@ -1,4 +1,6 @@
+import { Separator } from "@/components/ui/separator";
 import Banner from "./elements/banner";
+import Playground from "./elements/playground";
 import Portofolio from "./elements/portofolio";
 
 const Homepage = () => {
@@ -6,6 +8,8 @@ const Homepage = () => {
     <>
       <Banner />
       <Portofolio />
+      <Separator className="bg-accent-foreground" />
+      <Playground />
     </>
   );
 };

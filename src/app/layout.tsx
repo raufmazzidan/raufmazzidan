@@ -5,7 +5,7 @@ import { Kanit, Geist } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const font = Kanit({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -13,15 +13,15 @@ const font = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "Rauf Mazzidan | Front End Developer",
+  title: "Rauf Mazzidan",
   description:
-    "Experienced Frontend Developer specializing in JavaScript, TypeScript, React, and Next.js. Passionate about delivering high-quality, user-centric digital experiences while ensuring performance optimization and code precision.",
+    "Software Engineer with experience building scalable, high-performance web applications. Proven track record in fintech and enterprise solutions, with a strong commitment to delivering intuitive design systems, optimizing web performance, and maintaining exceptional code quality across agile teams.",
   openGraph: {
-    title: "Rauf Mazzidan | Front End Developer",
+    title: "Rauf Mazzidan",
     description:
-      "Experienced Frontend Developer specializing in JavaScript, TypeScript, React, and Next.js. Passionate about delivering high-quality, user-centric digital experiences while ensuring performance optimization and code precision.",
+      "Software Engineer with experience building scalable, high-performance web applications. Proven track record in fintech and enterprise solutions, with a strong commitment to delivering intuitive design systems, optimizing web performance, and maintaining exceptional code quality across agile teams.",
     url: "https://raufmazzidan.com/",
-    siteName: "Rauf Mazzidan | Front End Developer",
+    siteName: "Rauf Mazzidan",
     images: [
       {
         url: "https://raufmazzidan.com/assets/thumbnail.png",

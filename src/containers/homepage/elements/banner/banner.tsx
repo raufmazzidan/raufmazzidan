@@ -50,7 +50,7 @@ const Banner = () => {
       />
       <Checkered width={720} size={21} />
       <h1 className="text-4xl font-roboto-slab mt-10">Rauf Mazzidan</h1>
-      <p className="text-sm font-light">Front End Developer</p>
+      <p className="text-sm font-light">Software Engineer</p>
       <div className="mt-4 inline-flex gap-2">
         {SOCIAL.map(({ Icon, url, label }) => (
           <TooltipProvider key={url}>

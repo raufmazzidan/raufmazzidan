@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-const OPTIONS = ["Home", "Works"];
+const OPTIONS = ["Home", "Works", "Playground"];
 
 const Tabs = () => {
   const [value, onChange] = useState("Home");
@@ -22,6 +22,16 @@ const Tabs = () => {
           }
         }
       }
+
+      const isAtBottom =
+        window.scrollY > 0 &&
+        window.innerHeight + Math.ceil(window.scrollY) >=
+          document.documentElement.scrollHeight - 24;
+
+      if (isAtBottom) {
+        currentTab = OPTIONS[OPTIONS.length - 1];
+      }
+
       onChange(currentTab);
     };
 
@@ -36,6 +46,11 @@ const Tabs = () => {
           <button
             key={tab}
             onClick={() => {
+              if (
+                document.documentElement.scrollHeight <= window.innerHeight
+              ) {
+                onChange(tab);
+              }
               const section = document.getElementById(tab.toLowerCase());
               if (section) {
                 const yOffset =
